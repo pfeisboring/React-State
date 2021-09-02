@@ -10,14 +10,16 @@ class App extends Component {
       profession: "Etudiant",
     },
     shows: false,
+    counter :0,
   });
 
   componentDidMount() {
     console.log("hello from component did mount")
     setInterval(() => {
-      console.log('The count begins');
+      this.setState ({counter : this.state.counter +1})
     }, 1000);
   }
+ 
 
   componentDidUpdate() {
     console.log("hello from component did update")
@@ -33,6 +35,7 @@ class App extends Component {
 
   render() {
     console.log("hello from render")
+
     return (
       <div>
         <div className="wrapper">  
@@ -45,6 +48,8 @@ class App extends Component {
              <li>{this.state.Person.bio} </li>
              <li>{this.state.Person.profession} </li>
              <li>{this.state.Person.imgSrc} </li>
+             <li>{this.state.counter} </li>
+
              </h3>  
           </div> 
           
